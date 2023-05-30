@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "pages#home"
 
+  resources :books do
+    resources :bookings, except: :delete
+  end
 
 
 end

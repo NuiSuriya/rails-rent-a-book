@@ -3,9 +3,11 @@ class CreateBooks < ActiveRecord::Migration[7.0]
     create_table :books do |t|
       t.string :title
       t.text :description
-      t.float :price, default: 0.0
-      t.references :author, null: false, foreign_key: true
-      t.references :genre, null: false, foreign_key: true
+      t.string :author
+      t.string :genre
+      t.string :language
+      t.float :price_per_day, default: 0.0
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
